@@ -1,0 +1,77 @@
++-----------------------------+
+|        User Interface       |
++-----------------------------+
+               |
+               ▼
++-----------------------------+
+|   Select Action:            |
+|   1. Manage Subjects        |
+|   2. Generate Question Paper|
++-----------------------------+
+               |
+       +-------+-------+
+       |               |
+       ▼               ▼
++-------------+  +--------------------+
+| Subject     |  | Paper Configuration|
+| Management  |  |                    |
++-------------+  +--------------------+
+       |                  |
+       ▼                  ▼
++-------------+  +--------------------+
+| Add/Edit    |  | Select:            |
+| Subject &   |  | - Subject          |
+| Syllabus    |  | - Grade            |
++-------------+  | - Difficulty       |
+       |         | - Total Marks      |
+       |         +--------------------+
+       |                  |
+       |                  ▼
+       |         +--------------------+
+       |         | Define Paper       |
+       |         | Pattern:           |
+       |         | - Sections         |
+       |         | - Question Types   |
+       |         | - Marks Distribution|
+       |         +--------------------+
+       |                  |
+       +-------+----------+
+               |
+               ▼
++-----------------------------+
+|    Question Generation      |
+|    Process                  |
++-----------------------------+
+               |
+               ▼
++-----------------------------+
+| 1. Load Subject Syllabus    |
+| 2. Select Random Topics     |
+| 3. For Each Question:       |
++-----------------------------+
+               |
+               ▼
++-----------------------------+
+| AI Question Generation:     |
+| - Format Template Selection |
+| - Topic & Subtopic Insertion|
+| - Difficulty Calibration    |
+| - Prompt Engineering        |
++-----------------------------+
+               |
+               ▼
++-----------------------------+
+| Paper Assembly:             |
+| - Organize by Sections      |
+| - Apply Formatting          |
+| - Add Metadata              |
++-----------------------------+
+               |
+               ▼
++-----------------------------+
+| Output Options:             |
+| - View in Browser           |
+| - Download as Text/PDF      |
+| - Save for Later            |
++-----------------------------+
+``` 

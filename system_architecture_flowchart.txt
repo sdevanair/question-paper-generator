@@ -1,0 +1,117 @@
++--------------------------------------------------+
+|          SYSTEM ARCHITECTURE DIAGRAM             |
++--------------------------------------------------+
+
++------------------+       +------------------+
+|                  |       |                  |
+|  User Interface  |<----->|  State Manager   |
+|                  |       |                  |
++------------------+       +------------------+
+        ^                         ^
+        |                         |
+        v                         v
++------------------+       +------------------+
+|                  |       |                  |
+|  Subject Manager |<----->| Paper Designer   |
+|                  |       |                  |
++------------------+       +------------------+
+        ^                         ^
+        |                         |
+        v                         v
++------------------+       +------------------+
+|                  |       |                  |
+| Storage Manager  |<----->| Question Generator|
+|                  |       |                  |
++------------------+       +------------------+
+        ^                         ^
+        |                         |
+        +------------+------------+
+                     |
+                     v
+            +------------------+
+            |                  |
+            |  External API    |
+            |  (Gemini)        |
+            |                  |
+            +------------------+
+
+
+Component Details:
+------------------
+
++--------------------------------------------------+
+| User Interface                                   |
+|--------------------------------------------------|
+| - React Components                               |
+| - Forms for Subject/Syllabus Management          |
+| - Question Paper Configuration Interface         |
+| - Results Display                                |
+| - Download Options                               |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| State Manager                                    |
+|--------------------------------------------------|
+| - Manages Application State                      |
+| - Coordinates between Components                 |
+| - Handles User Actions                           |
+| - Controls Workflow                              |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| Subject Manager                                  |
+|--------------------------------------------------|
+| - Custom Subject Creation                        |
+| - Syllabus Definition                            |
+| - Topic and Subtopic Management                  |
+| - Subject List Maintenance                       |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| Paper Designer                                   |
+|--------------------------------------------------|
+| - Question Paper Pattern Definition              |
+| - Section Management                             |
+| - Question Type Configuration                    |
+| - Marks Distribution                             |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| Storage Manager                                  |
+|--------------------------------------------------|
+| - LocalStorage Interface                         |
+| - Subject Data Persistence                       |
+| - Configuration Saving/Loading                   |
+| - Question Paper History                         |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| Question Generator                               |
+|--------------------------------------------------|
+| - Topic Selection Algorithms                     |
+| - AI Prompt Engineering                          |
+| - Response Processing                            |
+| - Question Formatting                            |
+| - Paper Assembly                                 |
++--------------------------------------------------+
+
++--------------------------------------------------+
+| External API (Gemini)                            |
+|--------------------------------------------------|
+| - AI-Powered Question Generation                 |
+| - Provides Natural Language Processing           |
+| - Creates High-Quality Questions                 |
+| - Adaptive to Difficulty Levels                  |
++--------------------------------------------------+
+
+Data Flow:
+----------
+
+1. User interacts with UI to manage subjects/syllabus
+2. Subject data is stored via Storage Manager
+3. User configures question paper parameters
+4. Question Generator accesses subject data
+5. Generator creates prompts for Gemini API
+6. API returns generated questions
+7. Questions are assembled into paper
+8. Final paper is presented to user for download 

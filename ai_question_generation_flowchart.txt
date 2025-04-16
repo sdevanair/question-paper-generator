@@ -1,0 +1,123 @@
++--------------------------------------------------+
+|          AI QUESTION GENERATION PROCESS          |
++--------------------------------------------------+
+                         |
+                         ▼
++--------------------------------------------------+
+|  INPUT PARAMETERS:                               |
+|  - Topic (e.g., "Data Structures")              |
+|  - Subtopics (e.g., ["Arrays", "Linked Lists"]) |
+|  - Difficulty Level (Easy/Medium/Hard)          |
+|  - Grade Level (11/12)                          |
+|  - Question Type (MCQ/Short/Long)               |
+|  - Marks Allocation                             |
++--------------------------------------------------+
+                         |
+                         ▼
++--------------------------------------------------+
+|  TEMPLATE SELECTION                              |
+|  - Based on Question Type and Marks              |
++--------------------------------------------------+
+                         |
+                +--------+--------+
+                |  Question Type  |
+                +--------+--------+
+        +--------+    +-------+    +---------+
+        |        |    |       |    |         |
+        ▼        |    ▼       |    ▼         |
+  +----------+   | +---------+|  +---------+ |
+  |   MCQ    |   | |  Short  ||  |  Long   | |
+  +----------+   | +---------+|  +---------+ |
+        |        |    |       |    |         |
+        ▼        |    ▼       |    ▼         |
+  +----------+   | +---------+|  +---------+ |
+  | Choose    |  | | Choose  ||  | Choose  | |
+  | from MCQ  |  | | from    ||  | from    | |
+  | Templates |  | | Short   ||  | Long    | |
+  +----------+   | | Answer  ||  | Answer  | |
+        |        | | Templates|  | Templates| |
+        +--------+--+---------+--+---------+-+
+                         |
+                         ▼
++--------------------------------------------------+
+|  MARKS-BASED TEMPLATE REFINEMENT                 |
++--------------------------------------------------+
+                         |
+            +------------+------------+
+            |      Marks Range        |
+            +------------+------------+
+    +----------+     +---------+    +---------+
+    |          |     |         |    |         |
+    ▼          |     ▼         |    ▼         |
++----------+   |  +---------+  |  +---------+ |
+| Low Marks|   |  | Medium  |  |  | High    | |
+| (1-3)    |   |  | Marks   |  |  | Marks   | |
++----------+   |  | (4-7)   |  |  | (8+)    | |
+    |          |  +---------+  |  +---------+ |
+    ▼          |     |         |    |         |
++----------+   |     ▼         |    ▼         |
+| Simple    |  |  +---------+  |  +---------+ |
+| Templates |  |  | Complex |  |  | Advanced| |
++----------+   |  | Templates|  |  | Templates|
+    |          |  +---------+  |  +---------+ |
+    +----------+-----+---------+----+---------+
+                         |
+                         ▼
++--------------------------------------------------+
+|  TEMPLATE PROCESSING                             |
+|  - Replace {topic} with Actual Topic             |
+|  - Replace {subtopics} with Joined Subtopic List |
++--------------------------------------------------+
+                         |
+                         ▼
++--------------------------------------------------+
+|  PROMPT CONSTRUCTION                             |
+|  - Add Requirements Based on Difficulty          |
+|  - Add Grade-appropriate Guidelines              |
+|  - Include Structure Requirements                |
+|  - Add Format Instructions                       |
++--------------------------------------------------+
+                         |
+                         ▼
++--------------------------------------------------+
+|  AI MODEL INVOCATION                             |
+|  - Initialize Gemini Pro Model                   |
+|  - Set Temperature and Parameters                |
+|  - Send Constructed Prompt                       |
++--------------------------------------------------+
+                         |
+                         ▼
+              +----------+----------+
+              |   API Call Success? |
+              +----------+----------+
+                 /                \
+                /                  \
+               / Yes                \ No
+              /                      \
+             ▼                        ▼
++-------------------------+  +-------------------------+
+| Process AI Response     |  | Handle Error           |
++-------------------------+  +-------------------------+
+             |                        |
+             ▼                        ▼
++-------------------------+  +-------------------------+
+| Clean and Format        |  | Return Fallback        |
+| Generated Question      |  | Question Based on Topic|
++-------------------------+  +-------------------------+
+             |                        |
+             +------------+------------+
+                          |
+                          ▼
++--------------------------------------------------+
+|  RETURN FORMATTED QUESTION                       |
++--------------------------------------------------+
+                          |
+                          ▼
++--------------------------------------------------+
+|  OUTPUT:                                         |
+|  - Formatted Question Text                       |
+|  - For MCQs: Question with Options and Answer    |
+|  - For Short/Long: Question with Guidance Points |
+|  - For Application: Scenario-based Question      |
++--------------------------------------------------+
+``` 

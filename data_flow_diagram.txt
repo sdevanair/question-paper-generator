@@ -1,0 +1,131 @@
++--------------------------------------------------+
+|             DATA FLOW DIAGRAM (DFD)              |
++--------------------------------------------------+
+
+                  +-----------------+
+                  |                 |
+                  |      User       |
+                  |                 |
+                  +-----------------+
+                         ^ |
+                         | |
+              UI Actions | | Results
+                         | v
++--------------------------------------------------------------+
+|                                                              |
+|                      Question Paper Generator System         |
+|                                                              |
++--------------------------------------------------------------+
+            |                               ^
+  Subject   |                               | Question
+  Management|                               | Paper
+            v                               |
+     +-------------+                 +----------------+
+     |             |                 |                |
+     |  Subject &  |---------------->| Question       |
+     |  Syllabus   |   Syllabus      | Generation     |
+     |  Storage    |   Data          | Process        |
+     |             |                 |                |
+     +-------------+                 +----------------+
+                                            |
+                                            | Question
+                                            | Request
+                                            v
+                                     +----------------+
+                                     |                |
+                                     | Gemini AI API  |
+                                     |                |
+                                     +----------------+
+                                            |
+                                            | Generated
+                                            | Questions
+                                            v
+                                     +----------------+
+                                     |                |
+                                     | Paper Assembly |
+                                     |                |
+                                     +----------------+
+
++--------------------------------------------------+
+|           DETAILED DATA FLOW ELEMENTS            |
++--------------------------------------------------+
+
+1. User → System:
+   - Subject creation inputs
+   - Syllabus details
+   - Paper configuration parameters
+   - Generation requests
+
+2. System → Subject & Syllabus Storage:
+   - Custom subject definitions
+   - Topic hierarchies
+   - Subtopic lists
+
+3. Subject & Syllabus Storage → Question Generation:
+   - Subject metadata
+   - Selected topics and subtopics
+   - Syllabus structure
+
+4. Question Generation → Gemini AI API:
+   - Structured prompts with:
+     * Topic information
+     * Difficulty parameters
+     * Question type requirements
+     * Format specifications
+
+5. Gemini AI API → Question Generation:
+   - Generated question text
+   - Formatted according to question type
+   - Error responses (if any)
+
+6. Question Generation → Paper Assembly:
+   - Individual formatted questions
+   - Question metadata (topic, marks, type)
+
+7. Paper Assembly → System:
+   - Complete structured question paper
+   - Organized by sections
+   - With proper marks distribution
+
+8. System → User:
+   - Rendered question paper
+   - Download options
+   - Status updates
+
++--------------------------------------------------+
+|              DATA STORE DESCRIPTION              |
++--------------------------------------------------+
+
+1. LocalStorage (Subject & Syllabus Data):
+   - Schema: CustomSubject[]
+   - Fields:
+     * id: string
+     * name: string
+     * syllabus: Syllabus[]
+        > topic: string
+        > subtopics: string[]
+
+2. Application State (Runtime):
+   - Current subject selection
+   - Paper configuration
+   - Generated questions
+   - UI state
+
++--------------------------------------------------+
+|             PROCESS SPECIFICATIONS               |
++--------------------------------------------------+
+
+1. Subject Management Process:
+   - Input: User-defined subjects and syllabi
+   - Processing: Validation, structuring, organization
+   - Output: Persistent subject data
+
+2. Question Generation Process:
+   - Input: Subject data, paper configuration
+   - Processing: Topic selection, prompt construction, API interaction
+   - Output: Formatted questions
+
+3. Paper Assembly Process:
+   - Input: Generated questions, paper pattern
+   - Processing: Organization, formatting, validation
+   - Output: Complete question paper
